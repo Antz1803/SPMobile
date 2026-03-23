@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SPMobile.Views.SignUpPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="80, *, 150">
+        <BoxView Grid.Row="0" Color="#007B83" HorizontalOptions="Fill" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="40,20" Spacing="15">
+
+                <Label Text="Create Your Account" FontSize="24" FontAttributes="Bold" TextColor="#007B83" HorizontalOptions="Center" Margin="0,10,0,10" />
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Full Name" TextColor="#333333" FontSize="15" FontAttributes="Bold" />
+                    <Border StrokeShape="RoundRectangle 25" Stroke="#CCCCCC" Padding="15,0">
+                        <Entry x:Name="NameEntry" Placeholder="Enter your full name" PlaceholderColor="Silver" TextColor="Black" HeightRequest="48" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Student ID" TextColor="#333333" FontSize="15" FontAttributes="Bold" />
+                    <Border StrokeShape="RoundRectangle 25" Stroke="#CCCCCC" Padding="15,0">
+                        <Entry x:Name="IdEntry" Placeholder="e.g, 22-0000000" PlaceholderColor="Silver" TextColor="Black" HeightRequest="48" MaxLength="10" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Email Address" TextColor="#333333" FontSize="15" FontAttributes="Bold" />
+                    <Border StrokeShape="RoundRectangle 25" Stroke="#CCCCCC" Padding="15,0">
+                        <Entry x:Name="EmailEntry" Placeholder="Enter your email" Keyboard="Email" PlaceholderColor="Silver" TextColor="Black" HeightRequest="48" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Password" TextColor="#333333" FontSize="15" FontAttributes="Bold" />
+                    <Border StrokeShape="RoundRectangle 25" Stroke="#CCCCCC" Padding="15,0">
+                        <Entry x:Name="PassEntry" Placeholder="Create a password" IsPassword="True" PlaceholderColor="Silver" TextColor="Black" HeightRequest="48" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Confirm Password" TextColor="#333333" FontSize="15" FontAttributes="Bold" />
+                    <Border StrokeShape="RoundRectangle 25" Stroke="#CCCCCC" Padding="15,0">
+                        <Entry x:Name="ConfirmEntry" Placeholder="Repeat your password" IsPassword="True" PlaceholderColor="Silver" TextColor="Black" HeightRequest="48" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout Spacing="8" Margin="0,5">
+                    <CheckBox x:Name="TermsCheckBox" Color="#007B83" />
+                    <Label Text="I agree to the Terms &amp; Conditions" VerticalOptions="Center" TextColor="#007B83" FontSize="13" />
+                </HorizontalStackLayout>
+
+                <Button Text="Sign Up" BackgroundColor="#007B83" TextColor="White" CornerRadius="25" HeightRequest="55" FontSize="18" FontAttributes="Bold" Margin="0,15,0,10" Clicked="OnSignUpClicked" />
+
+                <BoxView HeightRequest="1" Color="#007B83" HorizontalOptions="Fill" Margin="0,5" Opacity="0.5" />
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="Already have an account?" TextColor="Black" FontSize="14" />
+                    <Label Text="Login" TextColor="#007B83" FontAttributes="Bold" FontSize="14">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLoginTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <BoxView Grid.Row="2" InputTransparent="True">
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="Transparent" Offset="0.0" />
+                    <GradientStop Color="#63A1A6" Offset="1.0" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+    </Grid>
+</ContentPage>
